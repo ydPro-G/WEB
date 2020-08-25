@@ -20,3 +20,42 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
 块级元素：以块的形式展示，总是独占一行，将后面元素挤到新的一行;
 行内元素：紧挨着显示，不会自动换行，行内元素通常被块级元素包含着嵌套显示。
 
+## HTML语义化
+语义化：指从HTML元素上就能看出页面的大致结构
+
+<header>:顶部，页眉
+<nav>:定义导航栏链接的集合
+<article>:独立内容
+<section>:对页面进行分块，可以和<article>互相嵌套
+<aside>:表示除页面主要内容之外的内容，比如侧边栏
+<footer>:底部，页脚
+
+
+## HTML5的几种类型：将 HTML5 中常用 api 作个简单分类
+ ### HTML5 DOM
+ 1.getElementByClassName
+ 2.遍历相关属性
+ 3.ele.scrolllntoView()
+ ### HTML5 事件
+ 1.contextmenu
+ 2.DOMContentLoaded:优于window.load执行
+ 3.readystatechange:判断动态载入的script,link标签是否加载完成
+ 4.hashchange
+ ### HTML5表单
+ 1.input/textarea里新增autoFocus字段
+ 2.表单验证api
+ 使用checkValidate()校验required,pattern="\d+"属性
+
+ ### HTML5脚本
+ 1.跨文档消息串数，核心是postMessage
+ 2.拖放api
+ 3.媒体元素<video>,<audio>
+ 4.浏览器状态管理(history)
+
+ ### HTML5 存储
+ 1.sessionStorage:大小上线为2.5Mb，页面关闭时清空
+ 2.localStorage：大小上限为2.5Mb，页面关闭时不会清空
+
+ ### HTML5 JavaScript Api
+ 1.requestAnimationFrame(callback):在重绘前执行指定的回调函数
+ 2.Web Worker
