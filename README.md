@@ -75,7 +75,7 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
   1.width：宽
     height：高
 
-  2.border：元素的边框
+  2.border：元素的边框,边框只有一个宽度的概念
     border-width,border-style,border-color,分别用来设置边框的宽度，样式（虚线，实线），颜色
 
   3.padding：内边距，是元素内容和边框之间的部分
@@ -87,5 +87,9 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
     padding: 10px 20px 30px;  /*上内边距为10px，左、右内边距均为20px，下内边距为30px*/
     padding: 10px 20px 30px 40px;  /*上内边距为10px，右内边距为20px，下内边距为30px，左内边距为40px*/
     `
+  4.margin指外边距，用来定义元素周围的空间
+    margin-top.margin-right,margin-bottom,margin-left:上，右，下，左
+    不同写法对应的值参照padding
 
-    
+ ### 盒模型分类：标准盒模型和IE盒模型
+  **标准盒模型**
