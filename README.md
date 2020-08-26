@@ -75,10 +75,10 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
   1.width：宽
     height：高
 
-  2.border：元素的边框,边框只有一个宽度的概念
+  2.**border**：元素的边框,边框只有一个宽度的概念
     border-width,border-style,border-color,分别用来设置边框的宽度，样式（虚线，实线），颜色
 
-  3.padding：内边距，是元素内容和边框之间的部分
+  3.**padding**：内边距，是元素内容和边框之间的部分
     padding-top,padding-right,padding-bottom,padding-left：上内边距，右内边距，下内边距，左内边距
    
     `
@@ -87,9 +87,34 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
     padding: 10px 20px 30px;  /*上内边距为10px，左、右内边距均为20px，下内边距为30px*/
     padding: 10px 20px 30px 40px;  /*上内边距为10px，右内边距为20px，下内边距为30px，左内边距为40px*/
     `
-  4.margin指外边距，用来定义元素周围的空间
+  4.**margin**：指外边距，用来定义元素周围的空间
     margin-top.margin-right,margin-bottom,margin-left:上，右，下，左
     不同写法对应的值参照padding
 
  ### 盒模型分类：标准盒模型和IE盒模型
-  **标准盒模型**
+  标准盒模型：标准盒模型用的是W3C规范
+  IE盒模型：IE盒模型用的怪异盒模型
+
+  **标准盒模型**：
+    1.元素的width，height值包含内容（content），不包含`border`和`padding`的值。
+    2.盒子的大小由元素的宽高，边框和内边距决定
+    `盒子的宽 = width + broder-width * 2 + padding-left + padding-right`
+    `盒子的高 = height + broder-width * 2 + padding-top + padding-nottom`
+  
+  **IE盒模型**
+    1.元素的width，height不仅包括content，还包括border和padding
+    2.盒子的大小取决与width，height，修改border和padding值并不能改变盒子的大小
+    3.盒子的大小等于元素的width，height值，在IE盒模型中，border盒padding的空间会挤压content的空间，使得元素的内容宽高小于width，height设置的值。
+
+
+### 浏览器兼容性与其他
+只要设置合适的DTD，大多数浏览器按照标准盒模型来修改，但IE5.X,IE6在怪异模式下根据ie盒子显示
+
+标准盒模型下元素的 box-sizing 属性（IE8+）默认值为 content-box，将它设置成 border-box 可转换为 IE 盒模型。在实际应用场景中，若想控制元素总宽高保持固定，这个设置很有用
+
+元素的宽（width）、高（height）、边框（border）、内边距（padding）、外边距（margin）都是盒子模型的重要组成部分，但盒子模型的大小只与元素的宽高，边距，内间距有关，外边距只影响盒子所占外围空间的大小
+
+
+
+
+
