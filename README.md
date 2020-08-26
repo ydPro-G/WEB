@@ -80,11 +80,11 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
 
   3.padding：内边距，是元素内容和边框之间的部分
     padding-top,padding-right,padding-bottom,padding-left：上内边距，右内边距，下内边距，左内边距
-    '''
+    (```)
     padding: 10px;    /*上、下、左、右内边距均为10px*/
     padding: 10px 20px;  /*上、下内边距为10px，左右内边距为20px*/
     padding: 10px 20px 30px;  /*上内边距为10px，左、右内边距均为20px，下内边距为30px*/
     padding: 10px 20px 30px 40px;  /*上内边距为10px，右内边距为20px，下内边距为30px，左内边距为40px*/
-    '''
+    (```)
 
     
