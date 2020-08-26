@@ -59,3 +59,32 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
  ### HTML5 JavaScript Api
  1.requestAnimationFrame(callback):在重绘前执行指定的回调函数
  2.Web Worker
+
+
+
+
+
+
+---
+
+
+## CSS
+ ### CSS盒模型
+ 在网页布局中，可以将HTML标签堪称一个个矩形盒子，盒模型就是用来描述这些矩形盒子所占空间大小。
+  **相关属性**
+  1.width：宽
+    height：高
+
+  2.border：元素的边框
+    border-width,border-style,border-color,分别用来设置边框的宽度，样式（虚线，实线），颜色
+
+  3.padding：内边距，是元素内容和边框之间的部分
+    padding-top,padding-right,padding-bottom,padding-left：上内边距，右内边距，下内边距，左内边距
+    (''')
+    padding: 10px;    /*上、下、左、右内边距均为10px*/
+    padding: 10px 20px;  /*上、下内边距为10px，左右内边距为20px*/
+    padding: 10px 20px 30px;  /*上内边距为10px，左、右内边距均为20px，下内边距为30px*/
+    padding: 10px 20px 30px 40px;  /*上内边距为10px，右内边距为20px，下内边距为30px，左内边距为40px*/
+    (''')
+
+    
