@@ -143,7 +143,7 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
 
   3. inline-block:
   + **既具有块级元素可以设置宽高的特性，又具有行内元素不换行的特性**
-  + 详细代码在（\css\inline-block.html），在代码中没有设置margin的值，但是div会有间隙，这是因为浏览器会将HTML中的换行符，制表符，空白符合并成空白符，如何消除掉这个间隙请看[这个链接](（https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/）)
+  + 详细代码在（\css\inline-block.html），在代码中没有设置margin的值，但是div会有间隙，这是因为浏览器会将HTML中的换行符，制表符，空白符合并成空白符，如何消除掉这个间隙请看[这个链接](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
 
 
 
