@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+}
+.left {
+    width: 100px;
+    height: 150px;
+    background-color: bisque;
+    position: absolute;
+}
+.right {
+    height: 150px;
+    background-color: #948eff;
+    margin-left: 100px; /*外边距100px*/
+}

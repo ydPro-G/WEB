@@ -1,0 +1,14 @@
+.left {
+    width: 100px;
+    height: 150px;
+    background-color: #ffb5bf;
+    float: left;
+}
+.right {
+    height: 150px;
+    background-color: #94e8ff;
+    overflow: auto; /*让.right形成BFC，让它不忽视移动元素*/
+}
+.container {
+    overflow: hidden; /*主元素形成BFC，包含浮动元素*/
+}
