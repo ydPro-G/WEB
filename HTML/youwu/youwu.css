@@ -1,0 +1,167 @@
+body {
+    min-width: 630px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li a:hover {
+    color: wheat;
+}
+p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+a {
+    color: black;
+}
+.container {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+}
+.head_con {
+    overflow: hidden;
+    width: 100%;
+}
+.logo {
+    float: left;
+    width: 300px;
+    height: 72px;
+    margin-left: 50px;
+}
+.menu_list {
+    margin-left: 500px;
+    height: 72px;
+    margin-top: 0px;
+    list-style-type: none;
+    padding: 0px;
+}
+.menu_item {
+    display: inline-block;
+    padding-left: 100px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: center;
+    float: right;
+}
+.brand {
+    width: 100%;
+    height: 700px;
+    margin: 0;
+    display: block;
+}
+.container_a {
+    overflow: hidden;
+}
+.center-container {
+    width: 100%;
+    float: left;
+}
+.center-container .center {
+    height: 150px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+.img_left {
+    width: 400px;
+    height: 150px;
+    float: left;
+    margin-left: -90%;
+}
+.img_right {
+    width: 400px;
+    height: 150px;
+    float: left;
+    margin-left: -600px;
+}
+
+.yellow {
+    color: darkorange;
+}
+.details_area {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.details_con {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+.detail_list {
+    width: 100%;
+    height: 300px;
+    display: inline-block;
+    margin-left: 130px; 
+}
+.detail_list img {
+    margin-top: 20px;
+    margin-left: 80px;
+    width: 210px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.yewu {
+    overflow: hidden;
+}
+.p_txt {
+    color: sandybrown;
+    font-size: 20px;
+    font-weight: normal;
+}
+.detail_list_hy {
+    width: 100%;
+    height: 300px;
+    display: inline-block;
+    margin-left: 150px;
+}
+.detail_list_hy img {
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-right: 10px;
+    width: 250px;
+    box-shadow: 1px 1px 5px #888888;
+}
+.gongneng {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.sim {
+    font-weight: bolder;
+    font-size: 19px;
+}
+.ershi {
+    display: block;
+    position: relative;
+    margin-left: 15.5%;
+    margin-top: 100px;
+    width: 1300px;
+}
+
+.zc {
+    margin-top: 100px;
+}
+.zc_list {
+    background-color: blue;
+    width: 80%;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.zc_list li {
+    display: inline-block;
+    float: left;
+    background-color: brown;
+    margin-left: 100px;
+    width: 40%;
+    height: 460px;
+    margin-top: 20px;
+}
