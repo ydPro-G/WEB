@@ -63,6 +63,7 @@ a {
 }
 .container_a {
     overflow: hidden;
+    width: 100%;
 }
 .center-container {
     width: 100%;
@@ -78,6 +79,7 @@ a {
     height: 150px;
     float: left;
     margin-left: -90%;
+    left: -30%;
 }
 .img_right {
     width: 400px;
@@ -139,33 +141,68 @@ a {
 }
 .sim {
     font-weight: bolder;
-    font-size: 19px;
+    font-size: 24px;
 }
 .ershi {
     display: block;
     position: relative;
-    margin-left: 15.5%;
+    margin-left: 16%;
     margin-top: 100px;
     width: 1300px;
 }
 
 .zc {
     margin-top: 100px;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    height: 500px;
 }
 .zc_list {
-    background-color: blue;
-    width: 80%;
-    height: 500px;
     display: block;
-    margin: 0 auto;
-    overflow: hidden;
+    height: 470px;
 }
 .zc_list li {
     display: inline-block;
     float: left;
-    background-color: brown;
-    margin-left: 100px;
-    width: 40%;
-    height: 460px;
-    margin-top: 20px;
+    width: 48%;
+    margin-right: -7%;
+    margin-left: 5%;
+    height: 470px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+
+}
+.zc_list li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.zc_list li p {
+    display: block;
+    float: left;
+    font-size: 26px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    left: 35%;
+    top: 90%;
+    margin-top: -20px;
+    z-index: 3;
+}
+.zc_list li img {
+    display: block;
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    z-index: 1;
+}
+.p_txt_a {
+    right: 30%;
+}
+.txt_size {
+    font-size: 18px;
 }
