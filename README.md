@@ -265,19 +265,19 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
       + 样式：css
     
   3.JS基本语法
-      + 变量(variable)
-       + 声明，赋值分解
-       + 单一var
+    + 变量(variable)
+      + 声明，赋值分解
+      + 单一var
       
-      + 命名规则
+    + 命名规则
       + 变量名必须以英文字母，_,$开头
       + 不可用系统的关键字，保留字作为变量名
 
-      1. 声明变量：`var a;`/`let a;` var和let区别：https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables
+    1. 声明变量：`var a;`/`let a;` var和let区别：https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables
       + 声明多个变量： var a=100,
                           b=200;
       
-      2. 基本语法
+    2. 基本语法
        + 原始值(栈数据)：Number,String,undefined,null,Boolean,直接按值存放，可以直接访问
        + 引用值(堆数据);存放在堆内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置，每个空间大小不一样，要根据情况进行特定分配。当我们需要访问引用类型（如对象，数组，函数等）的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。(JS栈和堆的区别)[https://www.cnblogs.com/chengguanhui/p/4737413.html]
     
