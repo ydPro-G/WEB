@@ -275,8 +275,8 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
 
   1. 声明变量：`var a;`/`let a;`
    [pvar和let区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables)
-    + 声明多个变量： var a=100,
-                        b=200;
+      `` ` 声明多个变量： var a=100,
+                        b=200;   ```
       
   2. 基本语法
       + 原始值(栈数据)：Number,String,undefined,null,Boolean,直接按值存放，可以直接访问
