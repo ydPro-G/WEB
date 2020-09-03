@@ -274,14 +274,78 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
     + 不可用系统的关键字，保留字作为变量名
 
   1. 声明变量：`var a;`/`let a;`
-   [pvar和let区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables)
-      `` ` 声明多个变量： var a=100,
-                        b=200;   ```
+   [pvar和let区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables)声明多个变量： var a=100,b=200;
       
   2. 基本语法
       + 原始值(栈数据)：Number,String,undefined,null,Boolean,直接按值存放，可以直接访问
       + 引用值(堆数据);存放在堆内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置，每个空间大小不一样，要根据情况进行特定分配。当我们需要访问引用类型（如对象，数组，函数等）的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。[JS栈和堆的区别](https://www.cnblogs.com/chengguanhui/p/4737413.html)
-    
+  
+  3. JS语句基本规则
+   + 语法后面要用分号结束“;”（function demo(){}函数后面可以不用加分号。for(){}后面可以不用加分号。if(){}后面可以不用加分号。）
+   + JS语法错误会引发后续代码终止，但不会影响其他代码块
+   + 书写格式要规范，“= + - /”两边应该有空格
+
+  4. JS运算符
+   + + - * / = () ++ -- += -= /= *= %=
+   + 优先级()最高
+   + [JS运算符优先级](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table)
+
+### JS比较运算符，逻辑运算符
+ 1. 比较运算符
+  + “>”、“<”、“==”、“>=”、“<=”、“!=”，“===”
+  + 比较结果为boolean值
+2. 逻辑运算符
+ + “&&”、“||”、“!”
+ + 运算结果为真实的值
+ + 逻辑与&&：先看第一个表达式转换成布尔值的结果。如果为真，那么它会看第二个表达式转换为布尔值的结果，然后如果只有两个表达式的话,只看第二个表达式，就可以返回该表达式的值了，一种短路语句。
+ + 逻辑或||：如果一个操作数或多个操作数为 true，则逻辑或运算符返回布尔值 true；只有全部操作数为false，结果才是 false。
+ + 逻辑非！：转换成布尔值在取反
+3. 被认定为 false 的值
+ + undefined、null、NaN、""、0、false
+
+### JS条件语句与循环语句
+ 1. 条件循环语句
+  + if
+  + if else
+ 2. switch语句（switch 语句用于不同的条件来执行不同的动作。）
+ 3. 循环语句
+  + for
+  + while
+  + do...while（会在检查条件是否为真之前执行一次代码块，然后如果条件为真的话，就会重复这个循环。）
+
+### JS 简要介绍数组或对象typeof，类型转换
+ 1. 初始引用值
+  + 数组
+  + 对象
+ 2. 数组
+  + 数组对象用来在单独的变量名中存储一系列的值。形式是一个中括号,里面可以写很多东西,中间用逗号隔开,每个逗号类似可以隔开两个仓库,每个仓库可以放东西,比如 Number、String 、undefined，放什么类型的值都可以。
+ 3. 关于数组的其他方法
+  + For...In 声明:使用 for...in 声明来循环输出数组中的元素
+  + 合并两个数组 - concat():使用 concat() 方法来合并两个数组。
+  + 用数组的元素组成字符串 - join():使用 join() 方法将数组的所有元素组成一个字符串。
+  + 文字数组 - sort():使用 sort() 方法从字面上对数组进行排序。
+  + 数字数组 - sort():如何使用 sort() 方法从数值上对数组进行排序。
+ 4. 对象
+  + JavaScript 对象是拥有属性和方法的数据。JavaScript 中的所有事物都是对象：字符串、数字、数组、日期，等等。在 JavaScript 中，对象是拥有属性和方法的数据。 
+ 5. typeof：六种数据类型
+  + Number
+  + string
+  + boolean
+  + undefined
+  + object
+  + null
+ 6. 类型转换
+  + Number(mix) 转换成数
+  + parseInt(string,radix) 转换成整数
+  + parseFloat(string) 把数字转换为浮点数
+  + toString(radix) 转换成为字符串
+  + String(mix) 把内容换成字符串
+  + Boolean() 转换成布尔值
+ 7. 隐式内容转换
+ 8. 不发生类型转换
+ 9. function 属于 object类型
+
+
 
 
     
