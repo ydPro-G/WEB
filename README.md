@@ -273,7 +273,8 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
     + 变量名必须以英文字母，_,$开头
     + 不可用系统的关键字，保留字作为变量名
 
-  1. 声明变量：`var a;`/`let a;` var和let区别：https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables
+  1. 声明变量：`var a;`/`let a;`
+   [pvar和let区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables)
     + 声明多个变量： var a=100,
                         b=200;
       
