@@ -2,13 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
     </head>
     <body>
         <script>
-            //相关代码
+            // 第一种方式
+            function box(参数){
+                //内容
+            };
+
+            // 第二种方式：命名函数表达式（function后面就成了表达式,有没有名字无所谓,所以延伸出了第三种写法）
+            var box = function test(参数){
+                //内容
+            }
+
+            // 第三种匿名表达式 --> 函数表达式
+            var box = function (参数){
+                //内容
+            }
         </script>
     </body>
 </html>
