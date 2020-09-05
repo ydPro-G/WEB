@@ -4,9 +4,105 @@
         <meta charset="utf-8">
         <title>有物智能</title>
         <link rel="stylesheet" href="youwu.css">
+        <style>
+            .wrap{
+                max-width: 1280px;
+                margin: 0 auto;
+                background-color: #ddd;
+                padding: 30px 0;
+            }
+            /* .list{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .list .item{
+                width: 20%;
+                margin: 20px 2.5%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+            }
+            .list .item .img{
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #888;
+            }
+            .list .item .img img{
+                max-width: 100%;
+                max-height: 100%;
+            } */
+            .list::after{
+                display: block;
+                content: '';
+                height: 1px;
+                clear: both;
+            }
+            .list .item{
+                width: 20%;
+                margin: 20px 2.5%;
+                float: left;
+            }
+            .list .item .img{
+                height: 200px;
+                border: 1px solid #888;
+                position: relative;
+            }
+            .list .item .img img{
+                max-width: 100%;
+                max-height: 100%;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        </style>
     </head>
 
     <body>
+        <div class="wrap">
+            <div class="list">
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="logo.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="huiyuan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+                <div class="item">
+                    <div class="img"><img src="zaocan.jpg" alt=""></div>
+                    <p>TEST</p>
+                </div>
+            </div>
+
+        </div>
         <div class="container"> <!--总样式-->
 
             <div class="head_con"><!--菜单栏-->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        background: #eee;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+    <script>
+      function displayMessage() {
+          const html = document.querySelector('html'); //使用一个DOM的内置方法选择html元素并将它存储在一个叫html的常量中
+
+          const panel = document.createElement('div'); //使用DOM方法创建div元素，并把新建元素的引用（新建对象的地址）放在panel常量中：消息框的外部容器
+          panel.setAttribute('class','msgBox'); //使用DOM方法添加一个值为msgBox的class类属性
+          html.appendChild(panel); // 使用DOM方法，给html常量添加panel元素，该方法添加元素的同时也会把panel<div>元素指定为html的子元素
+          
+          const msg = document.createElement('p'); // 创建一个p元素
+          msg.textContent = 'this is a message box';
+          panel.appendChild(msg);
+      }
+    </script>
+  </body>
+</html>
