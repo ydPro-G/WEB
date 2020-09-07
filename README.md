@@ -396,7 +396,7 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
 
 ### prototype和__proto__
  1. 和python里的__init__差不多
- (具体图片展示)[https://cdn.nlark.com/yuque/0/2018/png/199663/1544807307596-1e74bf82-9587-458b-bcff-62dfd57b0c87.png]
+ [具体图片展示](https://cdn.nlark.com/yuque/0/2018/png/199663/1544807307596-1e74bf82-9587-458b-bcff-62dfd57b0c87.png)
 
 
 
