@@ -399,6 +399,61 @@ HTML自带的特性让它们在浏览器中表现有差异，我们将HTML元素
  [具体图片展示](https://cdn.nlark.com/yuque/0/2018/png/199663/1544807307596-1e74bf82-9587-458b-bcff-62dfd57b0c87.png)
 
 
+### flex的一些补充
+Flex 布局是一整个模块，其中父元素称为 flex container，意为容器；子元素称为 flex item，意为项目；
+`display:flex`容器对外表现为块级元素；`display:inline-flex`容器对外表现为行内元素，对内两者表现是一样的。
+
+1. 容器属性：
+ 1. flex-direction:**定义主轴方向，也就是项目排列方向**
+  + `row`:默认值，主轴在水平方向，从左到右
+  + `row-reverse`:主轴水平方向，从右到左
+  + `column`:主轴在垂直方向，从上到下
+  + `column-reverse`:主轴在垂直方向，从下到上
+
+ 2. flex-wrap:**一行放不下，项目怎么换行**
+  + `nowrap`:默认，不换行
+  + `wrap`:换行，第一行在上
+  + `wrap-reverse`:换行，第一行在下
+
+ 3. flex-flow：是`flex-direction`和`flex-wrap`的简写，默认值是row no-wrap
+
+ 4. justify-content:**定义项目在主轴上的对齐方式**
+  + `flex-start`:默认，与主轴起点对齐
+  + `flex-end`:与主轴终点对齐
+  + `center`:项目居中
+  + `space-between`:两端对齐，项目之间的距离都相等
+  + `space-around`每个项目的两侧间隔相等，所以项目与项目之间的间隔是项目与边框之间间隔的两倍
+
+ 5. align-items：**定义项目在交叉轴上如何对齐**
+  + `flex-start`:与交叉轴的起点对齐
+  + `flex-end`:与交叉轴的终点对齐
+  + `center`：居中对齐
+  + `baseline`：项目第一行文字的基线对齐
+  + `stretch`:默认值，如果项目没有设置高度或auto，项目将占满整个容器的高度
+
+ 6. align-content：定义多跟轴线的对齐方式，项目排列只有一行时，该属性不起作用
+  + `flex-start`:与交叉轴起点对齐
+  + `flex-end`:与交叉轴终点对齐
+  + `center`:居中对齐
+  + `space-between`:与交叉轴两端对齐，轴线之间的距离相等
+  + `space-around`:每根轴线两侧的间隔都相等，所以轴线与轴线之间的间隔是轴线与边框之间间隔的两倍
+  + `stretch`:默认值，如果项目未设置高度或者为 auto，项目将占满整个容器的高度
+
+
+2. 项目属性：灵活控制flex布局 
+ 1. `order`:定义了一个项目的排序顺序，默认为0，数值越小，排序越靠前
+
+ 2. `flex-grow`：定义了项目的放大比例，默认为零，也就是即使存在剩余空间，也不会放大，所有项目的 flex-grow 都为 1，则所有项目平分剩余空间；如果其中某个项目的 flex-grow 为 2，其余项目的 flex-grow 为 1，则前者占据的剩余空间比其他项目多一倍。
+
+ 3. `flex-shrink`：定义了项目的缩小比例，默认为 1，即当空间不足时，项目会自动缩小。如果所有项目的 flex-shrink 都为 1，当空间不足时，所有项目都将等比缩小；如果其中一个项目的 flex-shrink 为 0，其余都为 1，当空间不足时，flex-shrink 为 0 的不缩小。
+
+ 4. `flex-basis`：在分配多余空间之前，项目占据的主轴空间，默认值为auto，项目原来的大小。flex-basis 的设置跟 width 或 height 一样，可以是像素，也可以是百分比。设置了 flex-basis 之后，它的优先级比 width 或 height 高。
+
+ 5. `flex`：是`flex-grow`,`flex-shrink`,`flex-basis`的缩写，默认值为 0  1 auto,后面两个属性可选，该属性有两个快捷值：**auto（1 1 auto）和 none（0 0 auto）。auto 代表在需要的时候可以拉伸也可以收缩，none 表示既不能拉伸也不能收缩。**
+
+ 6. `align-self`:定义单个项目与其他项目不一样的对齐方式，可以覆盖align-items属性.默认属性值是auto，即继承父元素的`align-items`属性值，当没有父元素时，它的表现等同与stretch.align-self 的六个可能属性值，除了 auto 之外，其他的表现和 align-items 一样。
+
+
 
 
 
