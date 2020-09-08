@@ -1,0 +1,51 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function library example</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input class="numberInput" type="text">
+  <p></p>
+
+  <script>
+    const input = document.querySelector('.numberInput');
+    const para = document.querySelector('p');
+
+    function squared(num) { // 函数声明 函数名字 形参
+        return num * num;  //平方
+    }
+    function cubed(num) {
+        return num * num * num //立方
+    }
+    function factorial(num) {
+        var x = num;
+        while (x > 1){ //返回给定数字的阶乘
+            num *= x-1;
+            x--;
+        }
+        return num;
+    }
+
+    input.onchange = function() { // 创建了一个onchange事件处理程序，一个新的值被输入到文本框并且被提交（就比如，输入一个值，然后按Tab）。当这个匿名函数运行时，输入框中的值将被存储在num变量中。
+        var num = input.value;
+        if (isNaN(num)) { // if 语句判断isNaN(num)表达式是否返回true，用isNaN()函数测试num的值是否是一个数字
+            para.textContent = 'You need to enter a number!';
+        } else {
+            para.textContent = num + 'squared is ' + squared(num) + '. ' + 
+                               num + 'cubed is ' + cubed(num) + '. ' + 
+                               num + 'factorial is ' + factorial(num) + '.';
+        }
+    }
+
+  </script>
+</body>
+</html>

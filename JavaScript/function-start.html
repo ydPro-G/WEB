@@ -44,8 +44,25 @@
           
           const msg = document.createElement('p'); // 创建一个p元素
           msg.textContent = 'this is a message box';
-          panel.appendChild(msg);
+          panel.appendChild(msg); // 追加到panel<div>之
+
+          const closeBtn = document.createElement('button'); // 创建一个button元素
+          closeBtn.textContent = 'x'; //使用元素.textContent属性-表示一个元素的文本属性，给button元素赋值
+          panel.appendChild(closeBtn);//追加到panel<div>之下
+
+          closeBtn.onclick = function() { // 使用onclick事件句柄给按钮添加一个点击事件，点击事件后定义一个匿名函数
+            panel.parentNode.removeChild(panel); // 匿名函数的功能：使用Node.removeChild()DOM方法指定要移除的HTML子元素，这里是panel
+          } //panel是消息框，panel.parentNode就是指panel的上一级，就是整个DOM，然后再来用这个父亲来干掉这个儿子，儿子不能自己干掉自己，所以要这么做。
+
+          const btn = document.querySelector('button');
+          btn.onclick = displayMessage;
       }
+      displayMessage();
     </script>
+    <div class="msgBox">
+      <p>This is a message box</p>
+      <button>x</button>
+    </div>
+
   </body>
 </html>
