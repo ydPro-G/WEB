@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+        <style>
+            pre {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>这是一个段落</p>
+        <button>点我</button>
+        <div class="demo">
+            <a href="www.baidu.com">百度一下</a>
+            <a href="www.google.com">google一下</a>
+        </div>
+        <a href="">aaaa</a>
+        <a href=""></a>
+        <pre>基本过滤选择器:https://www.jquery123.com/category/selectors/basic-filter-selectors/
+            示例：选取所有的 input 元素中的第一个 input 元素，并设置高度。
+            $(document).ready(function () {
+                $("input:first").css({    // first就是基本过滤选择器
+                  height: "300px",
+                });
+              });
+        </pre>
+        <pre>
+        内容选择过滤器：https://www.jquery123.com/category/selectors/content-filter-selector/
+        内容过滤选择器的过滤规则主要体现在它所包含的子元素或文本内容上。
+        示例：选取包含文本“shiyanlou”的 div 元素，并设置字体大小。
+        $(document).ready(function () {
+            $("div:contains('shiyanlou')").css({     :contains() Selector 选择所有包含指定文本的元素
+              "font-size": "30px",
+            });
+          });
+        </pre>
+        
+        <pre>可见性过滤选择器:https://www.jquery123.com/category/selectors/visibility-filter-selectors/
+            可见性过滤选择器是根据元素的可见和不可见状态来选择相应的元素。
+            示例：选取所有可见的 div 元素，并设置字体大小。
+            $(document).ready(function () {
+                $("div:visible").css({ "font-size": "30px" });   visible Selector 选择所有可见的元素
+              });
+        </pre>
+
+        <pre>
+            属性过滤选择器:https://www.jquery123.com/category/selectors/attribute-selectors/
+            属性过滤选择器的过滤规则是通过元素的属性来获取相应的元素
+            示例：选取拥有 class 属性的 div 元素，并设置字体大小
+            $(document).ready(function () {
+                $("div[class]").css({
+                  "font-size": "30px",
+                });
+              });
+        </pre>
+
+        <pre>
+            子元素过滤选择器:https://www.jquery123.com/category/selectors/child-filter-selectors/
+            示例：选取类名为 demo 的元素的第一个子 div 元素，并设置字体大小
+            $(document).ready(function () {
+                $(".demo div:first-child").css({
+                  "font-size": "30px",
+                });
+              });
+        </pre>
+        
+        <pre>
+            表单对象属性过滤选择器
+            :enabled Selector 选择所有可用的（注：未被禁用的元素）元素。
+
+            :disabled Selector 选择所有被禁用的元素。
+
+            :checked Selector 匹配所有勾选的元素。
+
+            :selected Selector 获取 select 元素中所有被选中的元素
+
+            示例：选择被选中元素，并设置宽度。
+            $(document).ready(function () {
+                $("input:checked").css({
+                  width: "300px",
+                });
+              });
+        </pre>
+
+        <pre>
+            特别需要注意的是选择器中的空格是不容忽视的，多一个空格或者少一个空格也许得到的结果就截然不同了，
+            比如 $('.test :hidden'); 带空格的是后代选择器，表示选取 class 为 test 的元素里面的隐藏元素，
+            而 $('.test:hidden'); 不带空格的是过滤选择器，表示选取隐藏的 class 为 test 的元素。
+        </pre>
+        
+
+        <script type="text/javascript">
+
+        // 等待dom元素加载完毕
+        var jq = $.noConflict();  //noConflict()返回对于jQuery的引用，把它存入变量，稍后使用
+        
+        jq(function() {
+            jq("button").click(function(){
+                jq("p").text("JQ，noConflict()返回对jQuery的引用！");
+            });
+        });
+
+        jq(function() {  // JQ函数
+            jq(".demo,p").css({  // 基本选择器：选择多个元素
+                width:"100px",
+                height:"100px",
+                "background-color": "red",
+                display : "flex",
+            });
+        });
+
+        jq(function(){
+            jq(".demo a").css({  // 层级选择，选择父元素的子元素，选择所有子元素，也就是选择所有a元素
+                "font-size": "20px",
+            });
+        });
+
+        jq(function(){
+            jq(".demo > a").css({ // 只选择第一个a元素会改变
+                "font-size": "5px",
+            });
+        });
+
+        jq(function(){
+            jq(".demo+a").next("a").css({  //同级别元素，选中class为demo后面的a元素，并设置字体大小,jq(".demo+a" = (".demo").next("a")
+                "font-size": "20px",
+            });
+        });
+
+        jq(function(){
+            jq(".demo ~ a").css({  // 选中class为demo的div元素后面的所有a同辈元素，设置字体大小
+                "font-size": "30px",
+            });
+        });
+
+        jq(".demo ~ a")与 jq(".demo").nextAll("a"):选取class为demo的div元素 之后 的所有同辈a元素
+        jq(".demo").siblings("a")                : 选取class为demo的div元素 的 全部同辈a元素，无论前后位置
+        
+
+        // 表单选择器
+:input 选取所有的 <input> 、<textarea>、<select>和 <button>元素。
+
+:text 选取所有的单行文本框。
+
+:password 选取所有的密码框
+
+:radio 选取所有的单选框
+
+:checkbox 选取所有的多选框
+
+:submit 选取所有的提交按钮
+
+:image 选取所有的图像
+
+:reset 选取所有的重置按钮
+
+:button 选取所有的按钮
+
+:file 选取所有的上传域
+
+:hidden 选取所有不可见元素
+
+jq(function(){
+    jq(":input").css({   // 示例
+        height: "300px",
+    });
+});
+
+
+
+
+
+        </script>
+    </body>
+</html>
