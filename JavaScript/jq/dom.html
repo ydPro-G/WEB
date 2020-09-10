@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM操作</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <pre>1. 什么是DOM?
+            DOM是文档对象模型，是 W3C 定义了访问HTML和XML文档的标准。
+            DOM可以把HTML看作文档树，通过DOM提供的API可以对树上的节点进行操作。
+        </pre>
+        <br>
+        <pre>2.DOM操作：查找节点
+            1.查找元素节点
+            var $li = jq("ol lo:eq(0)"); 获取ol里的第一个li节点
+            var li_txt = $li.text(); 获取第一个li里的文本内容，存储到变量li_txt中
+            alert(li_txt);  打印文本内容
+           
+            2.查找属性节点
+            利用jq选择器找到指定的元素后，就可以使用attr()方法来获取它的各种属性的值
+            var $para = $("p"); // 获取p节点，存储到para中
+            var p_txt = $para.attr("title"); 用attr()方法获取p元素节点属性title
+            alert(p_txt);打印title的值
+        </pre>
+        <br>
+        <pre>3.创建节点
+            3.1 创建元素节点
+            创建元素节点，可以用$(html)函数，$(html) 方法根据传入的 HTML 标记字符串，创建一个DOM对象，将这个DOM对象包装成一个JQ对象后返回
+            示例：为ul添加一个li元素节点
+            <xmp> var li_obj = $("<li>0</li>");</xmp>
+            $("ul").append(li_obj);
+
+            3.2 创建文本节点
+            创建文本节点就是在创建元素节点时直接把文本内容写出来，使用append添加到文档中
+            示例：
+            <xmp>var p = $("<p>ppp</p>>");  // 文本内容为ppp</xmp>
+            $("body").append(p);
+
+            3.3 创建属性节点
+            在创建元素节点是一起创建
+            示例:
+            <xmp>var li_obj = $("<li title="syl"></li>");  //添加属性title</xmp>
+            $("ul").append(li_obj);
+        </pre>
+<br>
+        <pre>4.插入节点
+
+            4.1 DOM插入到现有元素内
+            .append() 在每个匹配元素里面的末尾处插入参数内容。
+
+            .appendTo() 将匹配的元素插入到目标元素的最后面。
+
+            .html() 获取集合中第一个匹配元素的 HTML 内容 设置每一个匹配元素的 html 内容。
+
+            .prepend() 将参数内容插入到每个匹配元素的前面（元素内部）。
+
+            .prependTo() 将所有元素插入到目标前面（元素内）。
+
+            .text() 得到匹配元素集合中每个元素的合并文本，包括他们的后代设置匹配元素集合中每个元素的文本内容为指定的文本内容。
+
+            4.2 DOM插入到现有元素外
+
+            .after() 在匹配元素集合中的每个元素后面插入参数所指定的内容，作为其兄弟节点。
+
+            .before() 根据参数设定，在匹配元素的前面插入内容。
+
+            .insertAfter() 在目标元素后面插入集合中每个匹配的元素(注：插入的元素作为目标元素的兄弟元素)。
+
+            .insertBefore() 在目标元素前面插入集合中每个匹配的元素(注：插入的元素作为目标元素的兄弟元素)。
+
+            注：这些插入节点的方法不仅能将新创建的 DOM 元素插入到文档中，也能对原有的 DOM 元素进行移动。
+
+            示例：将新建li元素插入到ul中
+            <xmp> $("<li>yellow</li>").appendTo("ul"); </xmp>
+        </pre>
+
+        <pre>5. 删除节点
+
+            5.1 datach()方法
+            从DOM中去掉所有匹配的元素，如果想删除元素，不破坏他们的数据或事件处理程序，使用.detach()
+            示例： 
+            var $li = $("ul li:eq(1)").datach() // 删除元素
+            $li.appendTo("ul");重新追加此元素，之前它绑定的事件还在，如果用remove()方法删除元素，那么它之前绑定的事件会失效
+
+            5.2 empty()方法
+            从被选元素移除所有内容，包括所有文本和子节点。
+            示例： 
+            $("ul li:eq(1)").empty();  //获取第二个li元素后，清除此元素里的所有内容和他的子节点
+            
+            5.3 remove()方法 删除被选元素及其子元素和其绑定的事件
+            示例： 
+            var $li = $("ul li:eq(1)").remove()获取第二个li元素节点后，将他从网页删除
+
+
+        </pre>
+    </body>
+</html>
