@@ -1,0 +1,6 @@
+.wrap_content {
+    display: flex;
+    width: 100%;
+    background-color: springgreen;
+    max-width: 100%;
+}
