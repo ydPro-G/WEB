@@ -1,6 +1,22 @@
-.wrap_content {
+.descript_area {
     display: flex;
     width: 100%;
-    background-color: springgreen;
     max-width: 100%;
+    justify-content: center;
+    flex-grow: 1;
+}
+.descript_area img {
+    display: flex;
+    max-width: 100%;
+    height: 150px;
+}
+.descript_area p {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    align-items: flex-end;
+    margin-top: 50px;
 }
