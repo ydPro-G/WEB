@@ -114,12 +114,13 @@
     
 }
 .marketing_item {
-    width: 20%;
-    margin: 20px 3%;
+    width: 35%;
+    margin: 20px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    background-color: #F8F8F8;
 
 }
 .marketing_item img {
