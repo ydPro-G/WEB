@@ -73,7 +73,7 @@ li p {
     width: 12.5%;
     height: 100%;
     float: left;
-    font-size: 15px;
+    font-size: 0.9rem;
     margin-top: 5px;
     opacity: 0.5;
 }
@@ -84,7 +84,7 @@ li p {
     width: 12.5%;
     height: 100%;
     float: left;
-    font-size: 15px;
+    font-size: 0.9rem;
     margin-top: 5px;
     opacity: 0.5;
 }
@@ -92,26 +92,26 @@ li p {
 .price_item_2 img{
     display: block;
     margin: 0px 25% 3px;
+    height: 34px;
 }
 
 .price_item_3 img{
     display: block;
     margin: 0px 28% 3px;
+    height: 34px;
 }
 
 .price_item_2 p {
     text-align: center;
+    line-height: 14px;
+
 }
 
 .price_item_3 p {
     text-align: center;
+    line-height: 14px;
 }
 
-.price_item_2 img{
-    height: 32px;
-    max-height: 100%;
-    max-width: 100%;
-}
 .pc {
     display: block;
     height: 13px;
