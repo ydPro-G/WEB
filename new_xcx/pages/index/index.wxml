@@ -1,6 +1,16 @@
+<!-- 导航 -->
 <view class="header">
-  <view class="container">
-    <view class="logo"></view>
-    <view class="kefu"></view>
+  <!-- logo -->
+  <view class="container hdCon">
+    <navigator open-type="switchTab" url="../index/index" class="logo">
+      <!-- mode定义图片缩放模式，高度不变，宽度自适应 -->
+      <image mode="heightFix" src="../index/img/logo.jpg"></image>
+    </navigator>
+    <!-- 客服 -->
+    <view class="kefu">
+      <!-- open-type开放能力，contact客服对话，只能在button中使用 -->
+      <button class="btn" open-type="contact"></button>
+      <image mode="heightFix" src="../index/img/tag1.jpg"></image>
+    </view>
   </view>
 </view>

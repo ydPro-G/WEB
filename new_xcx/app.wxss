@@ -1,0 +1,9 @@
+/* 全局样式 左右26rpx内边距， box-sizing内边距边框都算在盒子模型内 */
+.container {
+  padding: 0 26rpx; box-sizing: border-box;
+}
+/* 动画关键帧 关键帧在0，50，100时不透明，在25时透明 */
+@keyframes dh{
+  0%,50%,100%{opacity: 1;}
+  25%{opacity: 0;}
+}
