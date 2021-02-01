@@ -1,0 +1,6 @@
+<view class="header">
+  <view class="container">
+    <view class="logo"></view>
+    <view class="kefu"></view>
+  </view>
+</view>
