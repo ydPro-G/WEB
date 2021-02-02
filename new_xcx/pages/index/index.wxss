@@ -1,7 +1,7 @@
 .header {
   width: 750rpx;
   height: 90rpx;
-  border: 1rpx solid red;
+  border: 1rpx solid;
 }
 .hdCon {
   display: flex;
@@ -12,7 +12,8 @@
   /* 继承父级高度，不然aliggn-items用不了 */
   height: 100%;
 }
-/* ,重新写 */
+
+/* ,分隔 */
 .hdCon navigator,.hdCon .kefu{
   height: 50rpx;
 }
