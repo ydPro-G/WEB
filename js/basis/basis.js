@@ -250,3 +250,23 @@ ask('Dou you agree?',showOk,showNO);
 解决当一个函数声明在一个代码块中进行时，它在代码块中可见，在代码块外不可见的问题。
 使用函数表达式，将函数赋值给在 if 语句之外声明的变量，这样就可以在代码块外使用。
  */
+let age = prompt('age?',18);
+
+let welcome;
+
+if (age < 18) {
+    welcome = function() {
+        alert('hello');
+    };
+} else {
+    welcome = function() {
+        alert('no');
+    };
+}
+welcome(); //可以调用
+
+// 箭头函数,约等于return的意思
+let num = (a, b) => c
+let num = function(a, b) {
+    return c;
+}
