@@ -25,5 +25,5 @@ let user = {
 
 let key = prompt('你知道他的名字吗？','name');
 // 使用变量获取属性值
-alert(user[key]);
+alert(user[key]); // 如果输入的是‘name’,显示john
 
