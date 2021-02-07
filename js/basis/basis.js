@@ -209,7 +209,7 @@ check... 检查什么
 
 
 
-
+// 函数表达式
 // 在js中函数只是一个值，它可以赋值给变量
 let sayHi = function() {
     alert('hello');
