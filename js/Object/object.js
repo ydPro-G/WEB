@@ -29,11 +29,6 @@ delete user.age; // 删除属性值
 
 
 
-
-
-
-
-
 // 方括号
 alert(user['like tools']); //访问多词属性需要用['']
 
@@ -197,5 +192,85 @@ let two = {two:2};
 
 // 使用Object.assign复制 one two里的属性到user
 Object.assign(user, one, two);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 垃圾收集器，内存管理在 JavaScript 中是自动执行的，当一个内存不可访问时，那么就会删除掉
+
+// user是指向对象的引用
+let user = { name:"bab",};
+// user被重写，引用丢失，垃圾收集器会丢弃数据并释放内存
+user = null;
+
+let user = { name:"bab",};
+let admin = user;
+// 虽然user被重写了 ，但是仍然可以通过admin访问到对象，所以不会被垃圾收集
+user = null;
+
+
+// 相互关联的对象
+function marry(man, woman) {
+    woman.husband = man;
+    man.wife = woman;
+
+    return {
+        father: man,
+        mother:woman
+    }
+}
+
+let family = marry({
+    name: 'bab'
+}, {
+    name:'ann'
+});
+
+// 删除了这两个引用，已经没有引用指向bab，现在bab是不可访问的，就会从内存中连带它的数据删除掉。
+delete family.father;
+delete family.mother.husband;
+
+// 如果一个在内部相互关联的大对象，是不可访问的，也会直接从内存中删除掉
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Symbol
+
 
 
