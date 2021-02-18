@@ -268,9 +268,52 @@ delete family.mother.husband;
 
 
 
-
+// 在对象里，我们只能使用字符串或者 Symbol 值作为键名。其他类型的键名会自动转换为字符串。
 
 // Symbol
+//  对象的属性仅支持string和Symbol值
+
+// id是一个symbol的值
+let id = Symbol(); 
+
+// id是一个带有描述内容“id”的symbol值
+let id = Symbol("id");
+
+//false----symbol是唯一的
+let id1 = Symbol("id");
+alert(id === id1); 
+
+symbol值不会自动转换成字符串，如果需要使用需要手动转换
+alert(id.toString());
+
+// 字面量中的symbol，需要用到[]
+let id = Symbol("id");
+let user = {
+    name: 'bob',
+    [id]:123 //not just "id:123"----因为使用的是变量id作为键名，而不是字符串id
+};
+
+// symbol 类型会被for...in 循环忽略
+let id = Symbol('id');
+let user = {
+    name: 'bobo',
+    age: 13,
+    [id]: 123
+};
+for (let key in user) alert(key); //print name,age,but no symbol type--id
+// 通过symbol值可以直接访问
+alert(user[id]);
 
 
+// 全局symbol值:symbol.for(key)
+let id = Symbol.for("id"); // 如果symbol不存在就创建
+// 如果有就读取
+let idAdmin = Symbol.for("id"); 
 
+
+// 通过Symbol得到名称---Symbol.keyFor()
+let sym = Symbol.for("name");
+alert( Symbol.keyFor(sym)); // name
+
+
+// 系统Symbol值
