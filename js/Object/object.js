@@ -317,3 +317,90 @@ alert( Symbol.keyFor(sym)); // name
 
 
 // 系统Symbol值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+对象方法---this
+
+// 方法
+let user = { //  this is object
+    name: 'john',
+    age: 30
+};
+
+// 作为对象属性的函数称为方法。
+user.sayHi = function() { //this is object methods 
+    alert('hi!');
+};
+user.sayHi();
+// 使用预定义函数作为方法使用
+function sayHello() {
+    alert('hello');
+};
+user.sayHi = sayHello;
+user.sayHi()
+
+// object methods shorthand--方法简写:省略function
+let object_one = {
+    sayHi() {   //sayHi:function() {}
+        alert('hi');
+    }
+};
+
+// 方法中的this---在方法里访问对象，可以使用this关键字,this 指向对象自身
+let user = {
+    name:'bob',
+    age:16,
+
+    sayHi() {
+        alert(this.name);  //this.name == user.name
+    }
+};
+user.sayHi(); //bob
+
+//this 值是在代码执行时确认的，可以在函数里定义，要用的时候再调用
+let user = { name:'bob'};
+let admin = { name: 'admin'};
+
+function sayHello() {
+    alert( this.name );
+}
+
+user.f = sayHello;
+admin.f = sayHello;
+
+user.f(); // bob
+user.f(); //admin
+
+
+
+
+
+
+
+
+
+
+
+
