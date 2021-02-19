@@ -342,7 +342,7 @@ alert( Symbol.keyFor(sym)); // name
 
 
 对象方法---this
-声明一个函数后，就可以使用 this 了，但 this 是直到函数调用时才有的
+声明一个函数后，就可以使用this，但 this 是直到函数调用时才有的
 
 // 方法
 let user = { //  this is object
