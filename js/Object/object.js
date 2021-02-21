@@ -150,7 +150,7 @@ let user = {name: 'john'};
 let admin = user;// 对象赋值引用的是同一个内存地址
 
 admin.name = 'pate'; //修改内存地址中的数据时，其他对象引用的是修改后的内存地址
-alert(user.name);
+alert(user.name); //pate
 
 
 // 常量对象
@@ -342,10 +342,10 @@ alert( Symbol.keyFor(sym)); // name
 
 
 对象方法---this
-声明一个函数后，就可以使用this，但 this 是直到函数调用时才有的
+声明一个函数后，就可以使用this，但 this 直到函数调用时才用的
 
-// 方法
-let user = { //  this is object
+// 
+let user = { 
     name: 'john',
     age: 30
 };
@@ -395,6 +395,54 @@ user.f(); // bob
 user.f(); //admin
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 构造函数，操作符‘new’---构造函数的主要目的——实现可重用的创建对象的代码。
+1.构造函数就是普通函数。我们对它有个约定，就是名字的首字母是大写的。
+2.构造函数是使用 new 调用的。这样的调用方式，会在开始创建一个空的 this，在最后呢，再返回一个被填充了的 this。
+
+// 构造函数
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+}
+let user = new User('jack');
+console.log(user.name); //jack
+console.log(user.isAdmin); //false
+
+// 构造函数里return----return 对象的时候就返回这个对象，否则返回的是 this。
+function BigUser() {
+    this.name = "bob";
+    return {name: "google"};  //有这个对象，返回google
+    return; //没有对象，返回this.name
+}
+alert(new BigUser().name); //google  
+
+// 构造函数里的方法
+function User(name) {
+    this.name = name;
+
+    this.sayHi = function() {
+        alert("my name is " + this.name);
+    };
+}
+
+let john = new User('jonh');
+
+john.sayHi(); //my name is jonh
 
 
 
