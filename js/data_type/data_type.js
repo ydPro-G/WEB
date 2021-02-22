@@ -1,4 +1,4 @@
-// 对象----存储多个值作为属性的容器。可以用 {} 创建
+// 对象----用来存储键名集合 ---- 可以用 {} 创建
 // 对象示例👇：
 let obj = {
     key: value,
@@ -12,7 +12,7 @@ obj.fun('name');
 
 
 
-
+// 对象和数组区别：对象允许我们把许多片段信息整合到一个实体里面去，数组允许我们存储有序集合。
 
 
 
@@ -111,7 +111,7 @@ alert(str.slice(0, 5));  // strin  不包含5，返回0，1，2，3，4
 
 
 
-// 数组 ---- Array ---- 存储有序集合的特殊结构
+// 数组 ---- Array ---- 存储有序集合
 // 数组可以存储任何类型
 
 // 1.声明
@@ -221,7 +221,6 @@ let users = [
 let user = users.find(item => item.id == 1);
 alert(user.name); // john
 
-
 // 数组方法一览表：
 // 添加/删除元素:
 // • push(...items)：向数组末尾添加元素。
@@ -265,6 +264,29 @@ alert(user.name); // john
 
 
 
+// 可迭代对象 --- 可以通过for ... of ....这类语句迭代读取一条数据供我们使用的对象叫做可迭代对象
+//  迭代器负责迭代操作
+
+
+// 字符串是可迭代的
+for (let str of 'test') {
+    alert(str); // t, then e , then s, then t
+} 
+
+
+//  可迭代对象是实现了 Symbol.iterator 方法属性的对象，就像上面描述的。
+//  类数组对象是拥有数值索引和 length 属性的对象，它们看起来像数组。
+// 迭代对象不一定是类数组，反过来，类数组也不一定是可迭代对象
+
+
+// Array.from
+let arraylike = {
+    0: 'hello',
+    1: 'world',
+    length: 2
+};
+
+let arr = Array.from(arraylike); //(*)  ---- Array.from 方法接收一个对象作为参数，如果发现是可迭代对象或者类数组的话，就从中生成一个新的数组。
 
 
 
@@ -275,5 +297,168 @@ alert(user.name); // john
 
 
 
+
+
+
+//  Map & Set  and WeakSet 和 WeakMap
+
+// Map ---- 存储键名数据项集合，类似于 Object。不同的是，Map 的键名允许使用任意类型
+let map = new Map(); // create Map object
+map.set(key, value); //存储键值
+map.set('1', 'str1'); // 字符串键名
+map.set(1, 'str1'); // 数值键名
+map.set(true, 'boll1'); //布尔键名
+let john = {name : 'john'};
+map.set(john, '123'); // 对象也可以作为键名
+alert(map.get(john)); // 123   ----map.get(key)：返回指定key的value
+//  用对象创建Map
+let map = new Map(Object.entries({  //  内置方法 Object.entries(obj) 方法以这种键-值对数组的形式精确返回一个对象的表示形式
+    name : 'bob',
+    age: 1
+})); 
+//  遍历Map
+let recipeMap = new Map([
+    ['cucumber', 500],
+    ['tomatoes', 350],
+    ['onion', 50]
+]);
+// 遍历键名
+for (let vegetable of recipeMap.key()) {
+    alert(vegetable); // cucumber   map.keys()  遍历键名
+}
+//  遍历键值
+for (let value of recipeMap.values()) {
+    alert(value); // cucumber   map.values()  遍历键名
+}
+// 以 [key, value] 形式遍历
+for (let entry of recipeMap) { // 等同于 recipeMap.entries() 
+    alert(entry); // cucumber,500
+}
+
+//  Set 唯一值集合
+let set = new Set();  // create set
+let john = { name: "John" };
+set.add(john); // set.add(value)：添加一个值，返回 Set 实例本身。
+//  遍历set
+let set = new Set(["oranges", "apples", "bananas"]);
+for (let value of set) alert(value);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Object.keys，values 和 entries
+// • Object.keys(obj)：返回由键名组成的数组。
+// • Object.values(obj)：返回由键值组成的数组。
+// • Object.entries(obj)：返回由 [键名, 键值] 对组成的数组。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  内置对象 date ---- 日期和时间
+let now = new Date();
+alert (now); // 显示当前时间/日期
+
+// 0 表示 01.01.1970 UTC+0
+let Jan01_1970 = new Date(0);
+alert( Jan01_1970 );
+// 现在加 24 小时, 得到 02.01.1970 UTC+0
+let Jan02_1970 = new Date(24 * 3600 * 1000 * 1);  // 1000 毫秒 3600 秒 24 小时
+alert( Jan02_1970 );
+
+// 获得时间组件
+getFullYear() //获得年份（4位数）
+getMonth() //获得月份，从 0 到 11。
+getDate() //获得日期，从 1 到 31，这个方法的名字看起来有点奇怪。
+getHours(), getMinutes(), getSeconds(), getMilliseconds() //获得对应时间组件。
+
+// 设置日期组件
+setFullYear(year[, month, date])
+setMonth(moth[, date])
+setDate(date)
+setHours(hour[,min, sec, ms])
+setMinutes(min[, sec, ms])
+setMilliseconds(ms)
+setTime(milliseconds) //（自 UTC 1970 年 1 月 1 日以来的时间，用此毫秒数设置整个日期）
+
+
+// 加天数或者秒数
+let date = new Date(2016, 1, 28); // 2016.1.28
+date.setDate(date.getDate() + 2); // 天数加2
+
+let date = new Date();  // now time
+date.setSeconds(date.getSeconds() + 70);  //now time + 70
+
+// 日期转时间戳
+let date = new Date();
+alert(+date); // 毫秒数, 等同于调用 date.getTime() 得到的值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// json --- JSON（JavaScript 对象表示法）是一种表示值和对象的通用格式
+
+// JSON.stringify 将对象转换为json  ---- 序列化 指转换为json
+let student = {
+    name: 'John',
+    age: 30,
+    isAdmin: false,
+    courses: ['html', 'css', 'js'],
+    wife: null
+  };
+let json = JSON.stringify(student); //to string  对象被转换成了字符串
+alert(typeof json);  // 
+
+// JSON.parse将JSON转换为对象  ---- 反序列化 指将json转换为对象
+let number = "[0,1,2,3]";
+number = JSON.parse(number);
+alert(typeof number); // to object
+alert(number[1]); //1
 
 
