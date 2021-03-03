@@ -270,6 +270,10 @@ document.getElementById('hider').onclick = function() {
 
 
 问题3：
+创建一个滑动菜单，点击时打开/收起子菜单项，打开/收起子菜单项会修改文档内容
+<div class="menu">
+  <span class="title">sweet</span>
+</div>
 
 
 
