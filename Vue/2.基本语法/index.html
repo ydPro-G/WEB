@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-bind attribute 被称为指令  绑定值 -->
+        <span v-bind:title="message">鼠标悬浮查看值</span>
+        <!-- v-if 判断值 -->
+        <p v-if="ok==true">ok=true</p>
+        <p v-else>ok=false</p>
+
+        <ol>
+            <!-- v-for 循环 -->
+            <li v-for="(item ,index) in todos">
+              {{ item.text }} --- {{index}}   <!-- index索引,item值 -->
+            </li>
+            
+            
+          </ol>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: '页面加载于 ' + new Date().toLocaleString(),
+                ok: true,
+                todos: [
+                    { text: '学习 JavaScript' },
+                    { text: '学习 Vue' },
+                    { text: '整个牛项目' },
+                ]
+            }
+
+        });
+    </script>
+</body>
+
+</html>

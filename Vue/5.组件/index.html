@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 组件使用 for遍历后端数据，v-bind 绑定遍历出来的数据传给组件props template使用 -->
+        <todo-item v-for="item in todos" v-bind:todo="item"></todo-item>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        /* 组件 component */
+        Vue.component("todo-item", {
+            // todo-item 组件现在接受一个
+            // "prop"，接收参数
+            // 这个 prop 名为 todo。
+            props: ['todo'],
+            template: "<li>{{todo.text}}</li>"
+        });
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                todos: [
+                    { text: '学习 JavaScript' },
+                    { text: '学习 Vue' },
+                    { text: '整个牛项目' },
+                ]
+            },
+        });
+    </script>
+</body>
+
+</html>
