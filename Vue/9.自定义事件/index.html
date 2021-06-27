@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+
+</head>
+
+<body>
+
+
+
+
+    <div id="app">
+
+        <todo>
+            <!-- slot=""    “”里面需要与下面保持一致 -->
+            <todo-title slot="todo-title" :title="title_name"></todo-title>
+            <todo-items slot="todo-items" v-for="(data,index) in datas" :items="data" :index="index" @:remove="removeItems(index)" :key="index"></todo-items>
+        </todo>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        /* <slot name="todo-title"></slot>  name=定义额外插槽*/
+        Vue.component('todo', {
+            template: `
+            <div>
+                <slot name="todo-title"></slot>   
+                    <ul>
+                        <slot name="todo-items"></slot>
+                    </ul>
+            </div>
+  `
+        });
+        Vue.component('todo-title', {
+            props: ["title"],
+            template: `
+            <div>{{title}}</div>
+  `
+        })
+        Vue.component('todo-items', {
+            props: ["items","index"],
+
+            template: `
+            <li>{{items}} <button @click="removeItems">删除</button></li>
+           
+  `,
+            methods: {
+                remove: function (index) {
+                    /* 自定义事件分发 */
+                    this.$emit('remove',index)
+                }
+            }
+        })
+
+
+
+        /* vue实例 */
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                title_name: "绑定标题",
+                datas: ['Java', 'Python', 'Linux']
+            },
+            methods: {
+                removeItems: function (index) {
+                    this.todoItems.splice(index, 1)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

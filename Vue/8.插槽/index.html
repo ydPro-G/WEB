@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+</head>
+
+<body>
+    <div id="app">
+        <todo-button>
+            Add todo
+        </todo-button>
+
+
+        <!-- 具名插槽:https://v3.cn.vuejs.org/guide/component-slots.html#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD -->
+
+
+
+        <!-- 作用域插槽 -->
+        <todo-list>
+            <!-- 绑定在 <slot> 元素上的 attribute 被称为插槽 prop。现在在父级作用域中，我们可以使用带值的 v-slot 来定义我们提供的插槽 prop 的名字 -->
+            <template v-slot:default="slotProps">  <!-- 一个不带 name 的 <slot> 出口会带有隐含的名字“default”。 -->
+                <i class="fas fa-check"></i>
+                <span class="green">{{ slotProps.item }}</span>
+            </template>
+        </todo-list>
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        /* <slot> 元素作为承载分发内容的出口 */
+        /* 当组件渲染的时候，<slot></slot> 将会被替换为“Add Todo”。 */
+        Vue.component('todo-button', {
+            template: '<button class="btn-primary"><slot></slot></button>'
+        });
+        /* <!-- 作用域插槽 --> */
+        Vue.component('todo-list', {
+            data() {
+                return {
+                    items: ['Feed a cat', 'Buy milk']
+                }
+            },
+            template: `
+            <ul>
+  <li v-for="( item, index ) in items">
+    <slot :item="item" :index="index" :another-attribute="anotherAttribute"></slot>
+  </li>
+</ul>
+  `
+        })
+        var vm = new Vue({
+
+            el: "#app",
+            /* 数据 */
+            data: {
+                message: "hello",
+            },
+
+        });
+    </script>
+</body>
+
+</html>
